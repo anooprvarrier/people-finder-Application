@@ -1,0 +1,47 @@
+<div>
+  <div *ngIf="!showEmployeeList()">
+    <mat-card class="people-finder-primary-search-card">
+      <mat-card-title>
+        Primary Search
+      </mat-card-title>
+      <mat-card-content>
+        <div [formGroup]="peoplePrimaryForm" class="primary-grid-container">
+          <mat-form-field class="people-finder-employee-id">
+            <input matInput type="text" formControlName="employeeID" placeholder="Employee ID">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="people-finder-secondary-search-card">
+      <mat-card-title>
+        Secondary Search
+      </mat-card-title>
+      <mat-card-content>
+        <div class="people-finder-secondary-form" [formGroup]="peopleSecondaryForm">
+          <div class="grid-container">
+            <mat-form-field class="people-finder-first-name">
+              <input matInput type="text" formControlName="firstName" placeholder="First Name">
+            </mat-form-field>
+            <mat-form-field class="people-finder-first-name">
+              <input matInput type="text" formControlName="middleName" placeholder="Middle Name">
+            </mat-form-field>
+            <mat-form-field class="people-finder-last-name">
+              <input matInput type="text" formControlName="lastName" placeholder="Last Name">
+            </mat-form-field>
+            <mat-form-field class="people-finder-designation">
+              <input matInput type="text" formControlName="designation" placeholder="Employee Designation">
+            </mat-form-field>
+            <mat-form-field class="people-finder-project">
+              <input matInput type="text" formControlName="project" placeholder="Project">
+            </mat-form-field>
+            <mat-form-field class="people-finder-account">
+              <input matInput type="text" formControlName="account" placeholder="Account">
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <button mat-button class="people-finder-search-btn" (click)="searchClicked()" [disabled]="!peoplePrimaryForm.valid && !peopleSecondaryForm.valid">Search</button>
+  </div>
+  <employee-list *ngIf="showEmployeeList()" [employeeList]="empList" (showSearch)="showSearchArea()"></employee-list>  
+</div>

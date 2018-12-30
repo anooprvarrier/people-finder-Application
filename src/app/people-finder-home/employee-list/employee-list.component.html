@@ -1,0 +1,18 @@
+<div>
+  <mat-card class="people-finder-list-card">
+    <mat-card-title>
+      Employee List
+      <button mat-button style="float: right;" (click)="backToSearch()">Back to Search</button>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-list class="employee-list-area">
+        <mat-list-item class="employee-list-item-area" *ngFor="let employee of empList">
+          <h3 matLine>{{employee.empid}}</h3>
+          <p matLine>{{employee.firstName}} {{employee.middleName}}
+            {{employee.lastName}}</p>
+          <p matLine>{{employee.designation}}</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

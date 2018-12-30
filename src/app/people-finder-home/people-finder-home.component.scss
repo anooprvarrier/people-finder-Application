@@ -1,0 +1,63 @@
+.people-finder-primary-search-card{
+  margin: 10px;
+  max-height:100px;
+  background-color:#D7BDE2;
+}
+.people-finder-secondary-search-card{
+  margin: 10px;
+  background-color:#D7BDE2;
+}
+.people-finder-search-btn{
+  margin: 0px 20% 10px 20%;
+  width: 60%;
+  background-color: #512E5F;
+  color: white;
+}
+.people-finder-primary-form {
+    width: 50%; 
+  }
+  .people-finder-secondary-form {
+    width: 100%;  
+  }
+  .primary-grid-container{
+    display: grid;
+    width: 50%;
+    grid-template-columns: auto;
+    padding: 10px;
+  }
+  .people-finder-employee-id {
+    width: auto;  
+    padding: 5px;
+  }
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+  .people-finder-first-name{
+    width: auto;
+    padding: 5px;
+  }
+  .people-finder-middle-name{
+    width: auto;
+    padding: 5px;
+  }
+  .people-finder-last-name{
+    width: auto;
+    padding: 5px;
+  }
+  .people-finder-account{
+    width: auto;
+    padding: 5px;
+  }
+  .people-finder-project{
+    width: auto;
+    padding: 5px;
+  }
+  .people-finder-designation{
+    width: auto;
+    padding: 5px;
+  }
+  .employee-list-area{
+    height: auto;
+  }

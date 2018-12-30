@@ -1,0 +1,17 @@
+<mat-card class="login-screen">
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <div [formGroup]="loginForm" class="login-form">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Email" formControlName="email">
+        <mat-error *ngIf="loginForm.controls.email.hasError('required')">Email is mandatory</mat-error>
+        <mat-error *ngIf="loginForm.controls.email.hasError('email') || loginForm.controls.email.hasError('pattern')">Email should be valid</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password">
+        <mat-error *ngIf="loginForm.controls.password.hasError('required')">Password is mandatory</mat-error>
+      </mat-form-field>
+      <button mat-button class="people-finder-login-btn" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+    </div>
+  </mat-card-content>
+</mat-card>
