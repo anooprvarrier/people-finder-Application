@@ -1,8 +1,8 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { PeopleFinderPreviewService } from './services/people-finder-preview.service';
 import { PeopleFinderPreviewRequest } from '../model/people-finder-preview-request.mapper';
-import { EmployeePreview } from '../model/EmployeePreview';
+import { EmployeePreview } from '../model/employee-preview.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './people-finder-home.component.html',
   styleUrls: ['./people-finder-home.component.scss']
 })
-export class PeopleFinderHomeComponent implements OnInit, OnChanges {
+export class PeopleFinderHomeComponent implements OnInit {
   title = 'People Finder';
   peopleSecondaryForm: FormGroup;
   peoplePrimaryForm: FormGroup;
@@ -20,9 +20,6 @@ export class PeopleFinderHomeComponent implements OnInit, OnChanges {
     private peopleFinderPreviewService: PeopleFinderPreviewService,
     private toasterService: ToastrService
   ) {
-  }
-  ngOnChanges() {
-
   }
   ngOnInit() {
     this.intializeForm();

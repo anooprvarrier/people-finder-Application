@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { PeopleFinderPreviewRequest } from 'src/app/model/people-finder-preview-request.mapper';
-import { EmployeePreview } from 'src/app/model/EmployeePreview';
+import { EmployeePreview } from 'src/app/model/employee-preview.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable()

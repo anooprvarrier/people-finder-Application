@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule } from '@angular/material';
+import { MatInputModule, MatCardModule, MatButtonModule, MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
@@ -14,13 +14,16 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth-service';
 import { PeopleFinderPreviewService } from './people-finder-home/services/people-finder-preview.service';
 import { EmployeeListComponent } from './people-finder-home/employee-list/employee-list.component';
+import { EmployeeDetailsDialogComponent } from './people-finder-home/employee-details-dialog/employee-details-dialog.component';
+import { EmployeeDetailsService } from './people-finder-home/services/empoyee-details.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleFinderHomeComponent,
     LoginComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EmployeeDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { EmployeeListComponent } from './people-finder-home/employee-list/employ
     MatListModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ToastrModule.forRoot({
@@ -43,8 +47,10 @@ import { EmployeeListComponent } from './people-finder-home/employee-list/employ
   ],
   providers: [
     AuthService,
-    PeopleFinderPreviewService
+    PeopleFinderPreviewService,
+    EmployeeDetailsService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EmployeeDetailsDialogComponent, EmployeeListComponent],
 })
 export class AppModule { }
