@@ -7,10 +7,12 @@
     <mat-card-content>
       <mat-list class="employee-list-area">
         <mat-list-item class="employee-list-item-area" *ngFor="let employee of empList">
-          <h3 matLine>{{employee.empid}}</h3>
-          <p matLine>{{employee.firstName}} {{employee.middleName}}
-            {{employee.lastName}}</p>
-          <p matLine>{{employee.designation}}</p>
+          <div (click)="openDialog(employee.empid)">
+            <h3 matLine>{{employee.empid}}</h3>
+            <p matLine>{{employee.firstName}} {{employee.middleName}}
+              {{employee.lastName}}</p>
+            <p matLine>{{employee.designation}}</p>
+          </div>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
